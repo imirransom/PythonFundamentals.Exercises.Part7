@@ -62,12 +62,14 @@ def language_choice_is_valid(lang_options: Dict[int, str], lang_choice: int) -> 
     :param lang_choice: An integer representing the value the user selected
     :return: A boolean representing the validity of the lang_choice
     """
-
-    for key in lang_options:
-        if key == lang_choice:
-            return True
-        else:
-            return False
+    if lang_choice == 1:
+        return True
+    elif lang_choice == 2:
+        return True
+    elif lang_choice == 3:
+        return True
+    else:
+        return False
 
 
 
