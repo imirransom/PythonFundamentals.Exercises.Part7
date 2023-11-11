@@ -64,7 +64,7 @@ def language_choice_is_valid(lang_options: Dict[int, str], lang_choice: int) -> 
     """
 
     for key in lang_options:
-        if key == 1 or key == 2 or key == 3:
+        if key == lang_choice:
             return True
         else:
             return False
@@ -81,8 +81,13 @@ def get_name_input(name_prompt_options: Dict[int, str], lang_choice: int) -> str
     :param lang_choice: The language the user has chosen
     :return:
     """
-    for key, value in name_prompt_options.items():
-        return key, value
+    if lang_choice == 1:
+        return name_prompt_options.get(1)
+    elif lang_choice == 2:
+        return name_prompt_options.get(2)
+    elif lang_choice == 3:
+        return name_prompt_options.get(3)
+
 
 
 def name_input(name_prompt: str) -> str:
@@ -112,8 +117,6 @@ def greet(name: str, greetings_options: Dict[int, str], lang_choice: int) -> Non
         print((f"{greetings_options.get(2)} {name}"))
     elif lang_choice == 3:
         print(f"{greetings_options.get(3)} {name}")
-    else:
-        return None
 
 
 
